@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/Calculadori.css">
+    <title>Calculadora</title>
+    <script type="text/javascript" src="./js/jQuery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let Painel = document.querySelector('.Painel');
+            let Resultsy = document.querySelector('.Results');
+            var v1;
+            var v2;
+            var op = undefined;
+            var resultsu;
+            var v11 = [];
+            var v22 = [];
+            var cont = 0;
+            let b0 = document.querySelector('.btn0').value;
+            let b1 = document.querySelector('.btn1').value;
+            let b2 = document.querySelector('.btn2').value;
+            let b3 = document.querySelector('.btn3').value;
+            let b4 = document.querySelector('.btn4').value;
+            let b5 = document.querySelector('.btn5').value;
+            let b6 = document.querySelector('.btn6').value;
+            let b7 = document.querySelector('.btn7').value;
+            let b8 = document.querySelector('.btn8').value;
+            let b9 = document.querySelector('.btn9').value;
+            let bI = document.querySelector('.btnI');
+            let bS = document.querySelector('.btnS');
+            let bM = document.querySelector('.btnM');
+            let bD = document.querySelector('.btnD');
+            let bME = document.querySelector('.btnME');
+            
+            $('.btn0').click(function(){
+                if(v11.length > 0 && (v11[0] != '0' || v11[0] != 0 || v11[0] != undefined || v11[0] != '' || v11[0] !=  null)){
+                    if(op == undefined && cont < 8){
+                        v1 = b0;
+                        v11.push(v1);
+                        inner(1);
+                        cont++;
+                    }else{
+                        b0.disabled = 'true';
+                    }
+                }
+                if(v22.length > 0 && (v22[0] != '0' || v22[0] != 0 || v22[0] != undefined || v22[0] != '' || v22[0] !=  null)){
+                    if(op != undefined && cont < 8){
+                        v2 = b0;
+                        v22.push(v2);
+                        inner(2);
+                        cont++;
+                    }else{
+                        b0.disabled = 'true';
+                    }
+                }
+            });
+            $('.btn1').click(function(){
+                if(op == undefined && cont < 8){
+                    v1 = b1;
+                    v11.push(v1);
+                    inner(1);
+                    cont++;
+                }else{
+                    b1.disabled = 'true';
+                }
+                if(op != undefined && cont < 8){
+                    v2 = b1;
+                    v22.push(v2);
+                    inner(2);
+                    cont++;
+                }else{
+                    b1.disabled = 'true';
+                }
+            });
+            $('.btn2').click(function(){
+                if(op == undefined && cont < 8){
+                    v1 = b2;
+                    v11.push(v1);
+                    inner(1);
+                    cont++;
+                }else{
+                    b2.disabled = 'true';
+                }
+                if(op != undefined && cont < 8){
+                    v2 = b2;
+                    v22.push(v2);
+                    inner(2);
+                    cont++;
+                }else{
+                    b2.disabled = 'true';
+                }
+            });
+            $('.btn3').click(function(){
+                if(op == undefined && cont < 8){
+                    v1 = b3;
+                    v11.push(v1);
+                    inner(1);
+                    cont++;
+                }else{
+                    b3.disabled = 'true';
+                }
+                if(op != undefined && cont < 8){
+                    v2 = b3;
+                    v22.push(v2);
+                    inner(2);
+                    cont++;
+                }else{
+                     b3.disabled = 'true';
+                }
+            });
+            $('.btn4').click(function(){
+                if(op == undefined && cont < 8){
+                    v1 = b4;
+                    v11.push(v1);
+                    inner(1);
+                    cont++;
+                }else{
+                    b4.disabled = 'true';
+                }
+                if(op != undefined && cont < 8){
+                    v2 = b4;
+                    v22.push(v2);
+                    inner(2);
+                    cont++;
+                }else{
+                    b4.disabled = 'true';
+                }
+            });
+            $('.btn5').click(function(){
+                if(op == undefined && cont < 8){
+                    v1 = b5;
+                    v11.push(v1);
+                    inner(1);
+                    cont++;
+                }else{
+                    b5.disabled = 'true';
+                }
+                if(op != undefined && cont < 8){
+                    v2 = b5;
+                    v22.push(v2);
+                    inner(2);
+                    cont++;
+                }else{
+                    b5.disabled = 'true';
+                }
+            });
+            $('.btn6').click(function(){
+                if(op == undefined && cont < 8){
+                    v1 = b6;
+                    v11.push(v1);
+                    inner(1);
+                    cont++;
+                }else{
+                    b6.disabled = 'true';
+                }
+                if(op != undefined && cont < 8){
+                    v2 = b6;
+                    v22.push(v2);
+                    inner(2);
+                    cont++;
+                }else{
+                    b6.disabled = 'true';
+                }
+            });
+            $('.btn7').click(function(){
+                if(op == undefined && cont < 8){
+                    v1 = b7;
+                    v11.push(v1);
+                    inner(1);
+                    cont++;
+                }else{
+                    b7.disabled = 'true';
+                }
+                if(op != undefined && cont < 8){
+                    v2 = b7;
+                    v22.push(v2);
+                    inner(2);
+                    cont++;
+                }else{
+                    b7.disabled = 'true';
+                }
+            });
+            $('.btn8').click(function(){
+                if(op == undefined && cont < 8){
+                    v1 = b8;
+                    v11.push(v1);
+                    inner(1);
+                    cont++;
+                }else{
+                    b8.disabled = 'true';
+                }
+                if(op != undefined && cont < 8){
+                    v2 = b8;
+                    v22.push(v2);
+                    inner(2);
+                    cont++;
+                }else{
+                    b8.disabled = 'true';
+                }
+            });
+            $('.btn9').click(function(){
+                if(op == undefined && cont < 8){
+                    v1 = b9;
+                    v11.push(v1);
+                    inner(1);
+                    cont++;
+                }else{
+                    b9.disabled = 'true';
+                }
+                if(op != undefined && cont < 8){
+                    v2 = b9;
+                    v22.push(v2);
+                    inner(2);
+                    cont++;
+                }else{
+                    b9.disabled = 'true';
+                }
+            });
+            $('.btnS').click(function(){
+                op = ' + ';
+                cont = 0;
+                bS.disabled = 'true';
+                bD.disabled = 'true';
+                bM.disabled = 'true';
+                bME.disabled = 'true';
+            });
+            $('.btnM').click(function(){
+                op = ' x ';
+                cont = 0;
+                bS.disabled = 'true';
+                bD.disabled = 'true';
+                bM.disabled = 'true';
+                bME.disabled = 'true';
+            });
+            $('.btnME').click(function(){
+                op = ' - ';
+                cont = 0;
+                bS.disabled = 'true';
+                bD.disabled = 'true';
+                bM.disabled = 'true';
+                bME.disabled = 'true';
+            });
+            $('.btnD').click(function(){
+                op = ' / ';
+                cont = 0;
+                bS.disabled = 'true';
+                bD.disabled = 'true';
+                bM.disabled = 'true';
+                bME.disabled = 'true';
+            });
+            $('.btnI').click(function(){
+                bS.disabled = 'true';
+                bD.disabled = 'true';
+                bM.disabled = 'true';
+                bME.disabled = 'true';
+                results();
+            });
+
+            function inner(v){
+
+                if(v == 1){
+                    let v12 = "";
+                    for(let i = 0; i < v11.length-1; i++){
+                        v12 +=v11[i];
+                    }
+                    Painel.innerHTML = v12 + v1;
+                    
+                }
+                if(v == 2){
+                    let v21 = "";
+                    let v23 = '';
+                    for(let a = 0; a < v11.length; a++){
+                        v23 +=v11[a];
+                    }
+                    for(let b = 0; b < v22.length-1; b++){
+                        v21 +=v22[b];
+                    }
+                    Painel.innerHTML = v23 + op + v21 + v2;
+                }
+               
+            }
+            function results(){
+                let vr2 = "";
+                let vr3 = '';
+                for(let c = 0; c < v11.length; c++){
+                    vr3 +=v11[c];
+                }
+                for(let d = 0; d < v22.length; d++){
+                    vr2 +=v22[d];
+                }
+                if(op == ' + '){
+                    resultsu = (parseInt(vr3) + parseInt(vr2));
+                    Painel.innerHTML = vr3 + op + vr2 + " = " + "<br><h4>" + resultsu + "</h4>";
+                    let di = 0;
+                    let r;
+                    let r2 = parseInt(vr2);
+                    let resd = [];
+                    let r3 = parseInt(vr3);
+                    let c1 = 0;
+                    while(di <= parseInt(vr3)){
+                        if(r3 >= 0 && c1 == 0){
+                            r = ( r3 + r2 );
+                            resd.push("<p class='resuls'>" + r3 + op + r2 + " = " + ( r3 + r2 ) + "</p>");
+                            if(r3 == 0){
+                                c1 = 1;
+                            }
+                        }else{
+                            break;
+                        }
+                        r3 = r;
+                        di++;
+                    }
+                    let rest = "";
+                    for(let g = 0; g < resd.length-1; g++){
+                        rest += resd[g];
+                    }
+                    Resultsy.innerHTML = rest;
+                }
+                if(op == ' - '){
+                    resultsu = (parseInt(vr3) - parseInt(vr2));
+                    Painel.innerHTML = vr3 + op + vr2 + " = " + "<br><h4>" + resultsu + "</h4>";
+                    let di = 0;
+                    let r;
+                    let r2 = parseInt(vr2);
+                    let resd = [];
+                    let r3 = parseInt(vr3);
+                    let c1 = 0;
+                    while(di <= parseInt(vr3)){
+                        if(r3 >= 0 && c1 == 0){
+                            r = ( r3 - r2 );
+                            resd.push("<p class='resuls'>" + r3 + op + r2 + " = " + ( r3 - r2 ) + "</p>");
+                            if(r3 <= 0){
+                                c1 = 1;
+                            }
+                        }else{
+                            break;
+                        }
+                        r3 = r;
+                        di++;
+                    }
+                    let rest = "";
+                    for(let g = 0; g < resd.length-1; g++){
+                        rest += resd[g];
+                    }
+                    Resultsy.innerHTML = rest;
+                } 
+                if(op == ' x '){
+                    resultsu = (parseInt(vr3) * parseInt(vr2));
+                    Painel.innerHTML = vr3 + op + vr2 + " = " + "<br><h4>" + resultsu + "</h4>";
+                    let di = 0;
+                    let r;
+                    let r2 = parseInt(vr2);
+                    let resd = [];
+                    let r3 = parseInt(vr3);
+                    let c1 = 0;
+                    while(di <= parseInt(vr3)){
+                        if(r3 >= 0 && c1 == 0){
+                            r = ( r3 * r2 );
+                            resd.push("<p class='resuls'>" + r3 + op + r2 + " = " + ( r3 * r2 ) + "</p>");
+                            if(r3 == 0){
+                                c1 = 1;
+                            }
+                        }else{
+                            break;
+                        }
+                        r3 = r;
+                        di++;
+                    }
+                    let rest = "";
+                    for(let g = 0; g < resd.length-1; g++){
+                        rest += resd[g];
+                    }
+                    Resultsy.innerHTML = rest;
+                }
+                if(op == ' / '){
+                    resultsu = (parseInt(vr3) / parseInt(vr2));
+                    Painel.innerHTML = vr3 + op + vr2 + " = " + "<br><h4>" + resultsu + "</h4>";
+                    let di = 0;
+                    let r;
+                    let r2 = parseInt(vr2);
+                    let resd = [];
+                    let r3 = parseInt(vr3);
+                    let c1 = 0;
+                    while(di <= parseInt(vr3)){
+                        if(r3 >= 0 && c1 == 0){
+                            r = ( r3 / r2 );
+                            resd.push("<p class='resuls'>" + r3 + op + r2 + " = " + ( r3 / r2 ) + "</p>");
+                            if(r3 == 0){
+                                c1 = 1;
+                            }
+                        }else{
+                            break;
+                        }
+                        r3 = r;
+                        di++;
+                    }
+                    let rest = "";
+                    for(let g = 0; g < resd.length-1; g++){
+                        rest += resd[g];
+                    }
+                    Resultsy.innerHTML = rest;
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <h4>DESAFIO CALCULADORA</h4>
+    <div class="Calculator">
+        <div class="Calculadora">
+            <div class="Painel"></div>
+            <div class="Buttons">
+                <button class="btns btn0" value="0" type="button">0</button>
+                <button class="btns btn1" value="1" type="button">1</button>
+                <button class="btns btn2" value="2" type="button">2</button>
+                <button class="btns btn3" value="3" type="button">3</button>
+                <button class="btns btn4" value="4" type="button">4</button>
+                <button class="btns btn5" value="5" type="button">5</button>
+                <button class="btns btn6" value="6" type="button">6</button>
+                <button class="btns btn7" value="7" type="button">7</button>
+                <button class="btns btn8" value="8" type="button">8</button>
+                <button class="btns btn9" value="9" type="button">9</button>
+                <button class="btns btnM" type="button">x</button>
+                <button class="btns btnS" type="button">+</button>
+                <button class="btns btnME" type="button">-</button>
+                <button class="btns btnD" type="button">/</button>
+                <button class="btns btnI" type="button">=</button>
+            </div>
+        </div>
+    </div>
+    <div class="Results"></div>
+    
+   
+</body>
+</html>
