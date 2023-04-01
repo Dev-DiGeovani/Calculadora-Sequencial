@@ -1,0 +1,82 @@
+body{
+    padding: 2%;
+    background-color: wheat;
+    width: 100%;
+}
+body > h4{
+    position: absolute;
+    top: 0;
+    left: 40%;
+}
+.Calculator{
+    width: 35%;
+    border: 5px solid black;
+    padding: 1%;
+    margin: 1.5% 1%;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    float: left;
+}
+.Results{
+    width: 60%;
+    border: 5px solid black;
+    padding: 5%;
+    margin: 1.5% 1%;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    overflow-y: scroll !important;
+    height: 530px;
+    float: right;
+}
+.Calculadora{
+    margin: auto;
+    padding: 2%;
+    background-color: white;
+    border: 1px solid black;
+    width: 90%;
+    height: 500px;
+    border-radius: 1em;
+}
+.Painel{
+    border: 1px solid black;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    margin: 1%;
+    padding: 2%;
+    width: 98%;
+    height: 80px;
+    font-weight: bold;
+}
+.Painel > h4{
+    font-size: 40px;
+    float: right;
+    margin-right: 3%;
+}
+.Buttons{
+    border: 1px solid black;
+    margin: 1%;
+    padding: 2%;
+    width: 98%;
+    height: 390px;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+.btns{
+    width: 29%;
+    color: white;
+    background-color: black;
+    padding: 2%;
+    margin: 1.5%;
+    border-radius: 1em;
+    font-size: 30px;
+}
+.btnM, .btnME, .btnD, .btnS{
+    color: yellow;
+}
+.btnI{
+    color: green;
+}
+.resuls{
+    width: 100% !important;
+    margin-top: -1%;
+}
